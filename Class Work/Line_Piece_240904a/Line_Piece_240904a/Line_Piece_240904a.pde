@@ -91,4 +91,8 @@ void draw() {
   //4th line doors//
   line(172, 397, 116, 395);
   line(376, 406, 317, 402);
+  
+  if(frameCount == 1){
+    save("Line_Ass.png");
+  }
 }
