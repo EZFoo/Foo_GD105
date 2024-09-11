@@ -4,7 +4,7 @@ void setup() {
   size (500, 500);
 }
 
-void draw() {
+void draw(){
 
 //face var//
  int skin = #fffaec;
@@ -75,5 +75,7 @@ void draw() {
  ellipse(width/2 - mouthX - lipSkinX, mouthY - lipSkinY, lipWidth - lipSkinWidth, 
  lipHeight - lipSkinHeight);
  
-
+if(frameCount == 1) {
+  save("Shape_Piece_240910a.png");
+ }
 }
