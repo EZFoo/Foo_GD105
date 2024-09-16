@@ -1,4 +1,5 @@
-
+// This code draws Neko Arc. It only draws the eyes and mouth, wanted some hair but didn't code it.
+// You can change stuff under 'var' this may break it so change at your own risk.
 
 void setup() {
   size (500, 500);
@@ -35,7 +36,7 @@ void draw(){
 
 
 //face//
- fill(skin);
+ fill(skin); // this was going to be the face not the background
  ellipse(width/2 , height/2,faceWidth , faceHeight);
 
 //eyes//
