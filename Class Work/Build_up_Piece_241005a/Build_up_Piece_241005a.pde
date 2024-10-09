@@ -1,4 +1,5 @@
-//this codes draws a tree with the branches slowly froming
+//this codes draws a tree with the branches slowly froming, but it looks like smoke
+//so that's what it is now
 
 PVector branches;
 
@@ -8,26 +9,32 @@ void setup() {
   noStroke();
   noSmooth();
 
-  branches = new PVector(0, 360);
+  branches = new PVector(360, 720);
 }
 
 void draw() {
 
-  translate(360, 360);
 
 //branches
+  fill(255, 50);
   circle(branches.x, branches.y, 10);
 
 
   //move the branches
-  float jumpiness = 0.9;
-  branches.y -= random(jumpiness) * 2; // move down one pixel every frame
-  branches.x -= random(-jumpiness, jumpiness);
+  float movement = 0.9;
+  float jumpiness = 1.0;
+  branches.y -= random(movement) * 2; // move up one pixel every frame
+  branches.x -= random(-jumpiness, jumpiness); //moves random between the - or + of jumpiness 
 
-if(branches.y < 50) { 
-  branches.x = branches.x + frameCount * 0.001;
+//if the circle y axies is less than a cetain number it does this each frame
+if(branches.y < 450) { 
+  branches.x = branches.x += random(-10, 10); //adds a random number between 10 and -10 to branches when used as x
+  jumpiness = jumpiness + 5; // adds 5 to jumpiness
+ 
  }
-
- if(branches.y 
-
+ 
+ //reset the circle when off screen to a x position between 320 and 400
+ if(branches.y < -2 || branches.x > width + 1){
+    branches.set(random(320, 400), 720);
+ }
 }
