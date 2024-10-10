@@ -21,14 +21,14 @@ void setup(){
  noSmooth();
 
  //loads in the main image
- panel1 = loadImage("panel1.png");
- panel2 = loadImage("panel2.png");
- panel3 = loadImage("panel3.png");
- panel4 = loadImage("panel4.png");
+ panel1 = loadImage("Panels/panel1.png");
+ panel2 = loadImage("Panels/panel2.png");
+ panel3 = loadImage("Panels/panel3.png");
+ panel4 = loadImage("Panels/panel4.png");
  //loads in the overlays
- overlayPanel1 = loadImage("overlayPanel1.png");
- overlayPanel2 = loadImage("overlayPanel2.png");
- overlayPanel3 = loadImage("overlayPanel3.png");
+ overlayPanel1 = loadImage("Panels/overlayPanel1.png");
+ overlayPanel2 = loadImage("Panels/overlayPanel2.png");
+ overlayPanel3 = loadImage("Panels/overlayPanel3.png");
  
  //loads text
  voice = loadFont("ComicSansMS-62.vlw");
@@ -36,7 +36,7 @@ void setup(){
 }
 
 void draw(){
- background(150);
+ background(255);
  
  //Manga panel. This is where the images and text resides
  strokeWeight(10);
@@ -76,7 +76,7 @@ void draw(){
  
  //Excess image
  strokeWeight(40);
- stroke(150);
+ stroke(255);
  line(10, 300, 10, 895);
  line(715, 300, 717, 895);
  strokeWeight(55);
@@ -133,4 +133,9 @@ void draw(){
  
  textFont(loudVoice, 30);
  text("Big\n\nRaga\n\n The\n\n Opp\n\n Stopa", 360 + random(3), 503 + random(3));
+
+ if(frameCount == 3){
+  save("Collage.png");
+ }
+
 }
