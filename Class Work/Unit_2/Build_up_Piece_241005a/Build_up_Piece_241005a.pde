@@ -37,4 +37,26 @@ if(branches.y < 450) {
  if(branches.y < -2 || branches.x > width + 1){
     branches.set(random(320, 400), 720);
  }
+
+ //saves  frames of the code made
+ boolean start = false;
+ 
+ 
+// if(start); {
+//   if (frameCount >= 200){
+//    saveFrame("frames/frame-####.png"); //<>//
+//  }
+// } 
+   if (frameCount >= 500 && frameCount <= 600){
+     start = true;}
+   else{
+     start = false;
+  }
+ if (start == true){
+   saveFrame("frames/frame-####.png");
+ }
+ 
+   //if(frameCount >= 260){
+   //  start = false;
+   //  print("3"); }
 }

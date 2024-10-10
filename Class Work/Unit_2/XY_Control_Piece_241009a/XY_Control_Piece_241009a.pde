@@ -70,5 +70,8 @@ void draw(){
  ellipse(1042 + sparkles, 1872, 220, move);
  ellipse(4023 + sparkles, 1786, 220, move);
 
+ if(frameCount == 3){
+  save("Collage.png");
+ }
 
 }
