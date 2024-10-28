@@ -1,3 +1,4 @@
+//This code is very simple left click and there's a 50% chance to win or not win
 int win;
 int score;
 
