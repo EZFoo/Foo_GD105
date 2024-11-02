@@ -50,15 +50,15 @@ void draw(){
  noStroke();
  
  //background
- image(background, 15, -4, 1612, 1635);
+ image(background, 0, 0, 1612, 1635);
  
  //Sun 
  fill(250, 171, 2);
- circle(-460, 1, 140);
+ circle(-460, 0, 140);
  
  //moon
  fill(40, 40, 40);
- circle(340, 0, 140);
+ circle(460, 0, 140);
  popMatrix();
  
  //draws the cloud(minute hand)
@@ -77,7 +77,7 @@ void draw(){
   float x2 = cos(hourAngle) * (radius - 270); //line length
   float y2 = sin(hourAngle) * (radius - 270);
   stroke(255, 0, 0);
-  strokeWeight(4);
+  strokeWeight(6);
   line(x1, y1, x2, y2);
  }
  
