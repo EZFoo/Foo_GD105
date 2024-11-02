@@ -7,7 +7,7 @@ void setup(){
  size(360, 360);
 }
 
-void mouseReleased() {
+void mouseReleased() { // the core 
  win = floor(random(2)); 
  if (win == 1){
   score += 1;
@@ -20,7 +20,7 @@ void mouseReleased() {
 void draw(){
   background(0);
   
- if (win == 1){
+ if (win == 1){ //updates the score
    background(0, 255, 0);
    fill(0);
    text("win", width/2, height/2);
@@ -33,7 +33,7 @@ void draw(){
   text("lose", width/2, height/2);
   text("score: " + score, 10, 10);  
  }
- if (frameCount == 1){
+ if (frameCount == 1){ //saves the first frame
  save("Personal_Piece.png");
  }
 }

@@ -70,7 +70,7 @@ void draw(){
  //draws lines that tell the hours
  float radius = 489;
  
- for (int i = 0; i < 24; i++) {
+ for (int i = 0; i < 24; i++) {// draws a line 24 times
   float hourAngle = map(i, 0, 24, TAU * 0.75, TAU * 1.75); //Maps i to a TAU value
   float x1 = cos(hourAngle) * radius;
   float y1 = sin(hourAngle) * radius;
@@ -89,21 +89,7 @@ void draw(){
  circle(360, 670, 419);
  image(tree, 430, 537, 600, 600);
   
-
- 
+if (frameCount == 1){ // saves the first frame
+ save("Clock.png");
+ }
 }
-
-////Make a function the draws leafs every second that moves off screen
-//void drawLeaf(){
- 
-// int leafSelector = ceil(random(3)+1);
-// int leafPicked1 = leafSelector;
-// Imageleaf1 = loadImage("Images/leaf" + leafPicked1 + ".png");
-// leaf1 = new PVector(360, 400);
- 
-// image(Imageleaf1, leaf1.x, leaf1.y, 50, 50);
-  
-// if(leaf1.y < -2 || leaf1.x > width + 1){
-//  leaf1.set(random(320, 400), 720);
-// }
-  
