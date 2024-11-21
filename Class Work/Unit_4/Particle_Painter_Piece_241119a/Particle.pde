@@ -15,9 +15,11 @@ class particle {
  // METHODS
  // draws the particle to the canvas
  void display() {
-  fill(222, 0, 78);
-  noStroke();
-  rect(position.x, position.y, size , size);
+
+ fillColor();
+ 
+ noStroke();
+ rect(position.x, position.y, size , size);
  }
 
  // updates the particle's state
@@ -29,6 +31,19 @@ class particle {
    position.set(random(-720, width), y);
    acceleration.y = (0);
    acceleration.x = (0);
+   //fillColor();
   }
+ }
+}
+
+void fillColor(){
+ float fillColor;
+  
+ fillColor = random(3);
+  
+ if(fillColor <= 1){
+  fill(#de004e);
+ } else if (fillColor >= 1){
+  fill(#860029);
  }
 }
