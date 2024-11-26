@@ -1,34 +1,34 @@
 particle[] rain;
-antiParticle[] antiRain;
+particle[] antiRain;
+color[] fill = {#860029, #de004e};
+int randomColor;
 
 void setup(){
  size(720, 720);
- noStroke();
  noSmooth();
  rain = new particle[128];
- antiRain = new antiParticle[80];
+ antiRain = new particle[100];
  
  for(int i = 0; i < rain.length; i++){
-  rain[i] = new particle(-50, 20); 
+  rain[i] = new particle(-50, 20, 0.01, 0.01); 
  }
- 
  for(int i = 0; i < antiRain.length; i++){
-  antiRain[i] = new antiParticle(height + 50, 20); 
+  antiRain[i] = new particle(height + 50, 20, -0.01, -0.01); 
  }
  
-  background(50, 20, 80);
+ background(#321450);
 }
 
 void draw(){
-  
+  randomColor = int(random(2));
   for(int i = 0; i < antiRain.length; i++){
-  antiRain[i].display();
-  antiRain[i].update();
+  antiRain[i].display(#321450, 0);
+  antiRain[i].update(height + 20);
  }
   
  for(int i = 0; i < rain.length; i++){
-  rain[i].display();
-  rain[i].update();
+  rain[i].display(fill[randomColor], 5);
+  rain[i].update(-50);
  }
  
   

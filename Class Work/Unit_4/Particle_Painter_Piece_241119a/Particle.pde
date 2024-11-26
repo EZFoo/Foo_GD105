@@ -2,48 +2,42 @@ class particle {
  // PROPERTIES
  PVector position, velocity, acceleration;
  int size;
+ int diameter = 1100;
  float y;
-
+ 
  // CONSTRUCTORS
- particle(float y, int s) {
-  position = new PVector(random(width), y);
+ particle(float y, int s, float vx, float vy) {
+  position = new PVector(random(-width, width ), y);
   velocity = PVector.random2D();
-  acceleration = new PVector(0.10, 0.08);
+  acceleration = new PVector(vx, vy);
   size = s;
  }
 
  // METHODS
  // draws the particle to the canvas
- void display() {
-
- fillColor();
- 
- noStroke();
+ void display(color c, float w){
+ stroke(w);
+ fill(c);
  rect(position.x, position.y, size , size);
+ 
+ //Draws a circle that resets to the starting pos
+ noFill();
+ circle(width/2, height/2, diameter);
  }
 
- // updates the particle's state
- void update() {
-  position.add(velocity);  // move based on velocity
-  velocity.add(acceleration);
+// updates the particle's state
+void update(float resetPos) {
+ position.add(velocity);  // move based on velocity
+ velocity.add(acceleration);
   
-  if(position.y > height + 50 || position.x > width + 50){
-   position.set(random(-720, width), y);
-   acceleration.y = (0);
-   acceleration.x = (0);
-   //fillColor();
+ //resets to the starting position
+ float particleDistance = dist(position.x, position.y, width/2, height/2);
+ boolean colliding = particleDistance < diameter;
+  
+ if(!colliding){
+  position.set(random(-width, width + width), resetPos);
+  acceleration.y = (0);
+  acceleration.x = (0);
   }
- }
-}
-
-void fillColor(){
- float fillColor;
-  
- fillColor = random(3);
-  
- if(fillColor <= 1){
-  fill(#de004e);
- } else if (fillColor >= 1){
-  fill(#860029);
  }
 }
