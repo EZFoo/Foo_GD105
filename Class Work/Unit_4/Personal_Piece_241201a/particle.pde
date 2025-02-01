@@ -1,8 +1,8 @@
 class particle {
  // PROPERTIES
  PVector position, velocity, acceleration, boundaryLoc;
- float size, resetDist = 10;
- float rectSize = second() * 10;
+ float size, resetDist = 100;
+ float rectSize = 100;
  boolean hitEdge = false;
   
  // CONSTRUCTOR
